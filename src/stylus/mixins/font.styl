@@ -1,0 +1,13 @@
+
+-font(label)
+	font-list = {
+		highlight: 'FontName' 700,
+		description: 'FontName' 400,
+		content: 'FontName' 400,
+		button: 'FontName' 700
+	}
+	current = font-list[label]
+
+	if current != null
+		font-family: current[0]
+		font-weight: current[1]

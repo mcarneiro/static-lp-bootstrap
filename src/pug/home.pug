@@ -1,0 +1,8 @@
+extends _layout.pug
+
+block content
+	+section
+		p Hello World, #{name}!
+		p #{root('/assets/img/teste.jpg')}!
+		button(data-bi:click="1") teste track click
+		div(data-bi:scroll="scroll-1") teste
