@@ -10,4 +10,12 @@ html
 
 	body
 		block content
+		div#dz-root
+		script(src="https://e-cdns-files.dzcdn.net/js/min/dz.js")
+		script.
+			DZ.init({
+				appId: "#{deezer.clientID}",
+				channelUrl: "#{root('channel.html')}"
+			});
+
 		script(src=root('assets/js/main.js'))

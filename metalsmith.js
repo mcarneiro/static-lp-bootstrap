@@ -4,11 +4,27 @@ const watch = require('metalsmith-watch')
 
 const devMode = process.argv.indexOf('--dev') >= 0
 
+const getConfig = name => process.env[`npm_config_${name}`] || process.env[`npm_package_config_${name}`]
+
 Metalsmith(__dirname)
 	.metadata({
-		title: "Landing Page Title",
-		description: "Landing Page Description",
-		url: devMode ? "/" : "http://www.website.io/"
+		title: 'Landing Page Title',
+		description: 'Landing Page Description',
+		spotify: {
+			clientID: getConfig('spotify_client_id'),
+			artistID: getConfig('spotify_artist_id'),
+			albumID: getConfig('spotify_album_id'),
+			redirectURI: getConfig('spotify_redirect_uri'),
+			scope: getConfig('spotify_scope')
+		},
+		deezer: {
+			clientID: getConfig('deezer_client_id'),
+			artistID: getConfig('deezer_artist_id'),
+			albumID: getConfig('deezer_album_id'),
+			redirectURI: getConfig('deezer_redirect_uri'),
+			scope: getConfig('deezer_scope')
+		},
+		url: devMode ? 'http://localhost:3000/' : 'https://www.production.com/'
 	})
 	.source('./src/data')
 	.destination('./www')
@@ -21,8 +37,8 @@ Metalsmith(__dirname)
 	}))
 	.use(devMode && watch({
 		paths: {
-			"${source}/**/*": true,
-			"src/pug/**/*": "**/*"
+			'${source}/**/*': true,
+			'src/pug/**/*': '**/*'
 		},
 		livereload: true,
 	}))

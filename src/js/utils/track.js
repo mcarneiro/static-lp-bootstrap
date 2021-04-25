@@ -1,5 +1,5 @@
 import throttle from './throttle'
-import isInsideViewportBy from './is-inside-viewport'
+import isInsideViewportBy from './isInsideViewport'
 
 export function scroll(pub) {
 	const trackScroll = ($node) => pub('bi:scroll', $node.getAttribute('data-bi:scroll'))
@@ -28,7 +28,7 @@ export function runOnceByName(callback) {
 	}
 }
 
-export function track(pub) {
+export default function track(pub) {
 	scroll(pub)
 	click(pub)
 }
