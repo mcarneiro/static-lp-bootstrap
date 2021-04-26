@@ -3,6 +3,7 @@ import track from './utils/track'
 import bi from './bi'
 import spotify from './components/spotify'
 import deezer from './components/deezer'
+import fullscreen from './components/fullscreen'
 
 (() => {
 	'use strict'
@@ -18,4 +19,5 @@ import deezer from './components/deezer'
 	track(pub)
 	spotify(pub)
 	deezer(pub)
+	fullscreen()
 })()
