@@ -4,7 +4,7 @@ block content
 	+section
 		p Hello World, #{name}!
 		p #{root('/assets/img/teste.jpg')}!
-		button(data-bi:click="1") teste track click
+		button(data-component='publish' data-publish='{"bi:click":"1"}') teste track click
 		div(data-bi:scroll="scroll-1") track me on scroll
 		div.social-login
 			button(data-spotify=spotify data-component='spotify') login spotify
@@ -16,4 +16,5 @@ block content
 				p some elements
 				p some elements
 				p some elements
-				button(data-fullscreen='{"el": ".game-holder"}' data-component='fullscreen') full screen
+				button.fullscreen-button--open(data-fullscreen='{"elm": ".game-holder"}' data-component='fullscreen') full screen
+				button.fullscreen-button--close(data-component='publish' data-publish='{"fullscreen:close": null}') close full screen

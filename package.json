@@ -13,7 +13,9 @@
 		"deezer_redirect_uri": "http://localhost:3000/",
 		"deezer_scope": "manage_library",
 		"deezer_artist_id": 0,
-		"deezer_album_id": 0
+		"deezer_album_id": 0,
+		"dev_url": "http://localhost:3000/",
+		"prod_url": "http://www.production.com/"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",

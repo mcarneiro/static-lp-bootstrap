@@ -1,9 +1,10 @@
 import pubSub from './utils/pubsub'
-import track from './utils/track'
 import bi from './bi'
 import spotify from './components/spotify'
 import deezer from './components/deezer'
 import fullscreen from './components/fullscreen'
+import publish from './components/publish'
+import trackScroll from './components/biScroll'
 
 (() => {
 	'use strict'
@@ -14,10 +15,11 @@ import fullscreen from './components/fullscreen'
 	sub('login:hide', () => {
 		document.querySelector('.social-login').style.display = 'none'
 	})
+	fullscreen(sub)
 
 	//publish last
-	track(pub)
+	trackScroll(pub)
 	spotify(pub)
 	deezer(pub)
-	fullscreen()
+	publish(pub)
 })()

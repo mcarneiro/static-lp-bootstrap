@@ -24,7 +24,7 @@ Metalsmith(__dirname)
 			redirectURI: getConfig('deezer_redirect_uri'),
 			scope: getConfig('deezer_scope')
 		},
-		url: devMode ? 'http://192.168.0.10:3000/' : 'https://www.production.com/'
+		url: devMode ? getConfig('dev_url') : getConfig('prod_url')
 	})
 	.source('./src/data')
 	.destination('./www')

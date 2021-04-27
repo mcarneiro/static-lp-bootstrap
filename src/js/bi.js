@@ -1,4 +1,4 @@
-import {runOnceByName} from './utils/track'
+import {runOnceByName} from './utils/runOnceBy'
 
 export default function bi(sub) {
 	sub('bi:scroll', runOnceByName((name) => {
