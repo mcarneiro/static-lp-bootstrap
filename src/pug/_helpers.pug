@@ -1,7 +1,7 @@
 - const root = path => (url + '/' + path).replace(/(?<!:)\/+/g, '/')
 
-mixin section()
+mixin section(className)
 	if block
-		section.section
-			div.section__wrapper
+		section(class=['section', className])
+			div(class=['section__wrapper', className+'__wrapper'])
 				block

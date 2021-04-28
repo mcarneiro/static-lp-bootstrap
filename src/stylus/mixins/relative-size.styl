@@ -1,0 +1,12 @@
+-relative-size(size, ref=mob)
+	ref-list = {
+		mob: 375
+	}
+	value = ref-list[ref]
+	if value == null
+		value = ref
+
+	"calc(%s * 100vw)" % (size/value)
+
+-rel(size, ref=mob)
+	-relative-size(size, ref)
